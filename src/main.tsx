@@ -4,6 +4,9 @@ import { ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App.tsx';
 import theme from './theme';
+
+import '@fontsource/open-sans';
+import '@fontsource/roboto';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
