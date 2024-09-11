@@ -50,7 +50,7 @@ const lightPalette = {
   },
   background: {
     default: '#f4f6f8', // Background for the whole app
-    paper: '#ffffff', // Paper elements (cards, modals)
+    paper: '#effffe', // Paper elements (cards, modals)
   },
   text: {
     primary: grey[900], // Main text color

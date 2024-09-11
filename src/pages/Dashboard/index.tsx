@@ -1,11 +1,9 @@
-import DarkModeToggle from '@/components/DarkMode';
-import { DarkMode } from '@mui/icons-material';
+import DarkModeToggle from '@/components/DarkModeToggle';
 
 const Dashboard = () => {
   return (
     <div>
       <h1>Dashboard</h1>
-      <DarkMode />
       <DarkModeToggle />
     </div>
   );
