@@ -1,0 +1,65 @@
+import React from 'react';
+import { Tabs, Tab, Box, Typography } from '@mui/material';
+
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
+
+const TabPanel: React.FC<TabPanelProps> = ({
+  children,
+  value,
+  index,
+  ...other
+}) => {
+  return (
+    <div
+      role='tabpanel'
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+};
+
+const a11yProps = (index: number) => {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+};
+
+const PropertiesTabs: React.FC = () => {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
+
+  return (
+    <Box sx={{ width: '100%' }}>
+      <Tabs value={value} onChange={handleChange} aria-label='properties tabs'>
+        <Tab label='Scrap Properties' {...a11yProps(0)} />
+        <Tab label='List Properties' {...a11yProps(1)} />
+      </Tabs>
+      <TabPanel value={value} index={0}>
+        {/* Content for Scrap Properties */}
+        <Typography>Scrap properties content goes here.</Typography>
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        {/* Content for List Properties */}
+        <Typography>List properties content goes here.</Typography>
+      </TabPanel>
+    </Box>
+  );
+};
+
+export default PropertiesTabs;
