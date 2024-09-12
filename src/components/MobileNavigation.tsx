@@ -27,59 +27,46 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ userRole }) => {
   };
 
   return (
-    <Box
-      sx={{
-        bgcolor: 'background.paper',
-        width: '100%',
-        position: 'fixed',
-        bottom: 0,
-        left: 0,
-        zIndex: 1000,
-        boxShadow: '0px -1px 10px rgba(0, 0, 0, 0.1)',
-        px: 4,
-      }}
-    >
-      <BottomNavigation value={value} onChange={handleChange}>
+    <BottomNavigation value={value} onChange={handleChange}>
+      <BottomNavigationAction
+        label='Home'
+        value='/'
+        icon={<DashboardIcon />}
+        sx={{ color: value === '/' ? 'primary.main' : 'text.secondary' }}
+      />
+      <BottomNavigationAction
+        label='Properties'
+        value='/properties'
+        icon={<HomeWorkIcon />}
+        sx={{
+          color: value === '/properties' ? 'primary.main' : 'text.secondary',
+        }}
+      />
+      <BottomNavigationAction
+        label='Clients'
+        value='/clients'
+        icon={<PeopleIcon />}
+        sx={{
+          color: value === '/clients' ? 'primary.main' : 'text.secondary',
+        }}
+      />
+      {userRole === 'admin' && (
         <BottomNavigationAction
-          label='Home'
-          value='/'
-          icon={<DashboardIcon />}
-          sx={{ color: value === '/' ? 'primary.main' : 'text.secondary' }}
-        />
-        <BottomNavigationAction
-          label='Properties'
-          value='/properties'
-          icon={<HomeWorkIcon />}
+          label='Users'
+          value='/users'
+          icon={<PersonIcon />}
           sx={{
-            color: value === '/properties' ? 'primary.main' : 'text.secondary',
+            color: value === '/users' ? 'primary.main' : 'text.secondary',
           }}
         />
-        <BottomNavigationAction
-          label='Clients'
-          value='/clients'
-          icon={<PeopleIcon />}
-          sx={{
-            color: value === '/clients' ? 'primary.main' : 'text.secondary',
-          }}
-        />
-        {userRole === 'admin' && (
-          <BottomNavigationAction
-            label='Users'
-            value='/users'
-            icon={<PersonIcon />}
-            sx={{
-              color: value === '/users' ? 'primary.main' : 'text.secondary',
-            }}
-          />
-        )}
-        <BottomNavigationAction
-          label='More'
-          value='/more'
-          icon={<MoreHorizIcon />}
-          sx={{ color: value === '/more' ? 'primary.main' : 'text.secondary' }}
-        />
-      </BottomNavigation>
-    </Box>
+      )}
+      <BottomNavigationAction
+        label='More'
+        value='/more'
+        icon={<MoreHorizIcon />}
+        sx={{ color: value === '/more' ? 'primary.main' : 'text.secondary' }}
+      />
+    </BottomNavigation>
   );
 };
 

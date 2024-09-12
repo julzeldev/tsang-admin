@@ -16,7 +16,7 @@ const lightPalette = {
     contrastText: '#fff',
   },
   secondary: {
-    main: pink[600], // Secondary actions
+    main: pink[500], // Secondary actions
     contrastText: '#fff',
   },
   background: {
@@ -46,16 +46,16 @@ const lightPalette = {
 const darkPalette = {
   mode: 'dark' as PaletteMode,
   primary: {
-    main: blue[700], // Lighter primary for dark mode
+    main: blue[400], // Lighter primary for dark mode
     contrastText: '#fff',
   },
   secondary: {
-    main: pink[500], // Secondary color adjusted for dark mode
+    main: pink[400], // Secondary color adjusted for dark mode
     contrastText: '#fff',
   },
   background: {
     default: '#1e1e1e', // Dark background
-    paper: '#2a2a2a', // Darker paper elements
+    paper: '#2a2a2a', // Lighter paper elements
   },
   text: {
     primary: '#ffffff', // Light text for dark background
