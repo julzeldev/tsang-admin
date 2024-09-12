@@ -1,5 +1,5 @@
 import React from 'react';
-import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material';
+import { BottomNavigation, BottomNavigationAction } from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import PeopleIcon from '@mui/icons-material/People';
@@ -22,6 +22,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ userRole }) => {
   }, [location]);
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    console.log(event);
     setValue(newValue);
     navigate(newValue);
   };
