@@ -1,13 +1,17 @@
-interface Props {
-  children: React.ReactNode;
-}
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import MobileNavigation from './MobileNavigation';
 
-const Layout: React.FC<Props> = ({ children }) => {
+const Layout: React.FC = () => {
   return (
     <div>
-      {/* <Header /> */}
-      {children}
-      {/* <Footer /> */}
+      <main>
+        <Outlet />
+      </main>
+
+      <footer>
+        <MobileNavigation userRole='admin' />
+      </footer>
     </div>
   );
 };

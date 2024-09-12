@@ -1,10 +1,10 @@
 import React, { createContext, useState, useMemo } from 'react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
-import getTheme from '../theme'; // Import your theme setup
 import { PaletteMode } from '@mui/material';
+import getTheme from '../theme'; // Import your theme setup
 
-// Define the context shape
-interface ThemeContextType {
+// Define the shape of the context context
+export interface ThemeContextType {
   mode: PaletteMode;
   toggleTheme: () => void;
 }
@@ -18,7 +18,7 @@ export const ThemeContext = createContext<ThemeContextType | undefined>(
 export const ThemeContextProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [mode, setMode] = useState<PaletteMode>('light');
+  const [mode, setMode] = useState<PaletteMode>('dark');
 
   const toggleTheme = () => {
     setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));

@@ -1,33 +1,3 @@
-// // src/theme.ts
-// import { createTheme } from '@mui/material/styles';
-
-// const theme = createTheme({
-//   palette: {
-//     primary: {
-//       main: '#1976d2',
-//     },
-//     secondary: {
-//       main: '#ff4081',
-//     },
-//   },
-//   typography: {
-//     fontFamily: 'Roboto, sans-serif',
-//     h1: {
-//       fontFamily: 'Open Sans, serif',
-//     },
-//     h2: {
-//       fontFamily: 'Open Sans, serif',
-//     },
-//     h3: {
-//       fontFamily: 'Open Sans, serif',
-//     },
-//     h4: {
-//       fontFamily: 'Open Sans, serif',
-//     },
-//   },
-// });
-
-// export default theme;
 import { createTheme, PaletteMode } from '@mui/material/styles';
 import {
   grey,
@@ -36,6 +6,7 @@ import {
   green,
   red,
   lightBlue,
+  pink,
 } from '@mui/material/colors';
 
 const lightPalette = {
@@ -45,7 +16,7 @@ const lightPalette = {
     contrastText: '#fff',
   },
   secondary: {
-    main: orange[500], // Secondary actions
+    main: pink[600], // Secondary actions
     contrastText: '#fff',
   },
   background: {
@@ -75,16 +46,16 @@ const lightPalette = {
 const darkPalette = {
   mode: 'dark' as PaletteMode,
   primary: {
-    main: blue[300], // Lighter primary for dark mode
+    main: blue[700], // Lighter primary for dark mode
     contrastText: '#fff',
   },
   secondary: {
-    main: orange[300], // Secondary color adjusted for dark mode
+    main: pink[500], // Secondary color adjusted for dark mode
     contrastText: '#fff',
   },
   background: {
-    default: '#121212', // Dark background
-    paper: '#1e1e1e', // Darker paper elements
+    default: '#1e1e1e', // Dark background
+    paper: '#2a2a2a', // Darker paper elements
   },
   text: {
     primary: '#ffffff', // Light text for dark background
@@ -126,6 +97,16 @@ const getTheme = (mode: 'light' | 'dark') =>
         fontSize: '1.5rem',
         fontWeight: 600,
       },
+      h4: {
+        fontFamily: 'Open Sans, serif',
+        fontSize: '1.25rem',
+        fontWeight: 600,
+      },
+      h5: {
+        fontFamily: 'Open Sans, serif',
+        fontSize: '1.125rem',
+        fontWeight: 600,
+      },
       body1: {
         fontFamily: 'Open Sans, serif',
         fontSize: '1rem',
@@ -147,7 +128,8 @@ const getTheme = (mode: 'light' | 'dark') =>
       MuiButton: {
         styleOverrides: {
           root: {
-            borderRadius: 8, // Button corners
+            borderRadius: 4, // Button corners
+            boxShadow: 'none', // Remove button shadow
           },
         },
       },
@@ -159,10 +141,10 @@ const getTheme = (mode: 'light' | 'dark') =>
             },
             '& .MuiOutlinedInput-root': {
               '& fieldset': {
-                borderColor: mode === 'light' ? grey[300] : grey[700], // Input border color
+                borderColor: mode === 'light' ? grey[300] : grey[800], // Input border color
               },
               '&.Mui-focused fieldset': {
-                borderColor: mode === 'light' ? blue[500] : blue[300], // Input border color on focus
+                borderColor: mode === 'light' ? blue[600] : blue[700], // Input border color on focus
               },
             },
           },

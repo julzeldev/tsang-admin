@@ -1,12 +1,10 @@
-import DarkModeToggle from '@/components/DarkModeToggle';
+import Page from '../../components/Page';
+import withPrivateRoute from '../../hocs/withPrivateRoute';
 
-const Dashboard = () => {
-  return (
-    <div>
-      <h1>Dashboard</h1>
-      <DarkModeToggle />
-    </div>
-  );
+const DashboardPage = () => {
+  return <Page title='Dashboard'>dashboard</Page>;
 };
+
+const Dashboard = withPrivateRoute(DashboardPage);
 
 export default Dashboard;

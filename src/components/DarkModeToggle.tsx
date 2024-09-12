@@ -1,9 +1,9 @@
 import { Stack, Switch } from '@mui/material';
 import { DarkMode, LightMode } from '@mui/icons-material';
-import { useThemeContext } from '@/hooks/useThemeContext.tsx';
+import { useTheme } from '../hooks/useTheme';
 
 const Toggle = () => {
-  const { mode, toggleTheme } = useThemeContext();
+  const { mode, toggleTheme } = useTheme();
 
   return (
     <>
