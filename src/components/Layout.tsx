@@ -20,9 +20,10 @@ const Layout: React.FC = () => {
       <Box
         component='footer'
         sx={{
-          bgcolor: 'background.paper',
           width: '100%',
-          boxShadow: '0px -1px 10px rgba(0, 0, 0, 0.1)',
+          boxShadow: '0px -1px 2px rgba(0, 0, 0, 0.1)',
+          height: '56px',
+          zIndex: 1,
         }}
       >
         <MobileNavigation userRole='admin' />

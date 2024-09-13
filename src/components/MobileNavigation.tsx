@@ -4,7 +4,6 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import PeopleIcon from '@mui/icons-material/People';
 import PersonIcon from '@mui/icons-material/Person';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 interface MobileNavigationProps {
@@ -28,7 +27,11 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ userRole }) => {
   };
 
   return (
-    <BottomNavigation value={value} onChange={handleChange}>
+    <BottomNavigation
+      value={value}
+      onChange={handleChange}
+      sx={{ bgcolor: 'background.paper' }}
+    >
       <BottomNavigationAction
         label='Home'
         value='/'
@@ -61,12 +64,6 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ userRole }) => {
           }}
         />
       )}
-      <BottomNavigationAction
-        label='More'
-        value='/more'
-        icon={<MoreHorizIcon />}
-        sx={{ color: value === '/more' ? 'primary.main' : 'text.secondary' }}
-      />
     </BottomNavigation>
   );
 };

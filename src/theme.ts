@@ -6,7 +6,7 @@ import {
   green,
   red,
   lightBlue,
-  pink,
+  lime,
 } from '@mui/material/colors';
 
 const lightPalette = {
@@ -16,12 +16,12 @@ const lightPalette = {
     contrastText: '#fff',
   },
   secondary: {
-    main: pink[500], // Secondary actions
+    main: lime[500], // Secondary actions
     contrastText: '#fff',
   },
   background: {
-    default: '#f4f6f8', // Background for the whole app
-    paper: '#effffe', // Paper elements (cards, modals)
+    default: '#efefef', // Background for the whole app
+    paper: '#fafafa', // Paper elements (cards, modals)
   },
   text: {
     primary: grey[900], // Main text color
@@ -50,12 +50,12 @@ const darkPalette = {
     contrastText: '#fff',
   },
   secondary: {
-    main: pink[400], // Secondary color adjusted for dark mode
+    main: lime[400], // Secondary color adjusted for dark mode
     contrastText: '#fff',
   },
   background: {
     default: '#1e1e1e', // Dark background
-    paper: '#2a2a2a', // Lighter paper elements
+    paper: '#232323', // Lighter paper elements
   },
   text: {
     primary: '#ffffff', // Light text for dark background

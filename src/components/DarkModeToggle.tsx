@@ -1,5 +1,5 @@
 import { Stack, Switch } from '@mui/material';
-import { DarkMode, LightMode } from '@mui/icons-material';
+import SettingsBrightnessOutlinedIcon from '@mui/icons-material/SettingsBrightnessOutlined';
 import { useTheme } from '../hooks/useTheme';
 
 const Toggle = () => {
@@ -11,9 +11,8 @@ const Toggle = () => {
       <div style={{ padding: '20px' }}>
         {/* Theme Toggle */}
         <Stack direction='row' alignItems='center' spacing={1}>
-          <LightMode />
+          <SettingsBrightnessOutlinedIcon />
           <Switch checked={mode === 'dark'} onChange={toggleTheme} />
-          <DarkMode />
         </Stack>
       </div>
     </>

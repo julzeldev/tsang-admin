@@ -22,7 +22,7 @@ const TabPanel: React.FC<TabPanelProps> = ({
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ py: 2 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -47,10 +47,16 @@ const PropertiesTabs: React.FC = () => {
 
   return (
     <Box sx={{ width: '100%' }}>
-      <Tabs value={value} onChange={handleChange} aria-label='properties tabs'>
-        <Tab label='Scrap Properties' {...a11yProps(0)} />
-        <Tab label='List Properties' {...a11yProps(1)} />
-      </Tabs>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label='properties tabs'
+        >
+          <Tab label='Scraping' {...a11yProps(0)} />
+          <Tab label='Search' {...a11yProps(1)} />
+        </Tabs>
+      </Box>
       <TabPanel value={value} index={0}>
         {/* Content for Scrap Properties */}
         <Typography>Scrap properties content goes here.</Typography>
