@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tabs, Tab, Box, Typography } from '@mui/material';
+import Scraping from './Scraping';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -59,7 +60,7 @@ const PropertiesTabs: React.FC = () => {
       </Box>
       <TabPanel value={value} index={0}>
         {/* Content for Scrap Properties */}
-        <Typography>Scrap properties content goes here.</Typography>
+        <Scraping />
       </TabPanel>
       <TabPanel value={value} index={1}>
         {/* Content for List Properties */}

@@ -6,7 +6,7 @@ import {
   green,
   red,
   lightBlue,
-  lime,
+  teal,
 } from '@mui/material/colors';
 
 const lightPalette = {
@@ -16,7 +16,7 @@ const lightPalette = {
     contrastText: '#fff',
   },
   secondary: {
-    main: lime[500], // Secondary actions
+    main: teal[500], // Secondary actions
     contrastText: '#fff',
   },
   background: {
@@ -50,7 +50,7 @@ const darkPalette = {
     contrastText: '#fff',
   },
   secondary: {
-    main: lime[400], // Secondary color adjusted for dark mode
+    main: teal[400], // Secondary color adjusted for dark mode
     contrastText: '#fff',
   },
   background: {
