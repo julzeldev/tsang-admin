@@ -21,7 +21,7 @@ const Layout: React.FC = () => {
         component='footer'
         sx={{
           width: '100%',
-          boxShadow: '0px -1px 2px rgba(0, 0, 0, 0.1)',
+          boxShadow: '0px -1px 1px rgba(0, 0, 0, 0.2)',
           height: '56px',
           zIndex: 1,
         }}

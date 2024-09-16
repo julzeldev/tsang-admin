@@ -1,6 +1,9 @@
 import React from 'react';
 import { Box, Typography, IconButton } from '@mui/material';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import LogoutIcon from '@mui/icons-material/Logout';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+
 import ContextMenu from './ContextMenu';
 import { useTheme } from '../hooks/useTheme';
 import { useAuth } from '../hooks/useAuth';
@@ -22,8 +25,9 @@ const Header: React.FC<Props> = ({ title, headerRef, isLargeScreen }) => {
     {
       label: mode === 'dark' ? 'Light Mode' : 'Dark Mode',
       onClick: toggleTheme,
+      icon: <Brightness4Icon />,
     },
-    { label: 'Logout', onClick: logout },
+    { label: 'Logout', onClick: logout, icon: <LogoutIcon /> },
   ];
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {

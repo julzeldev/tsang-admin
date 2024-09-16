@@ -1,8 +1,9 @@
-import { Menu, MenuItem } from '@mui/material';
+import { Menu, MenuItem, ListItemIcon } from '@mui/material';
 
 interface MenuItem {
   label: string;
   onClick?: () => void;
+  icon?: React.ReactNode;
 }
 
 interface Props {
@@ -34,6 +35,7 @@ const ContextMenu: React.FC<Props> = ({
     >
       {items.map((item, index) => (
         <MenuItem key={index} onClick={item.onClick}>
+          <ListItemIcon>{item.icon}</ListItemIcon>
           {item.label}
         </MenuItem>
       ))}

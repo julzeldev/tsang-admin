@@ -22,11 +22,7 @@ const TabPanel: React.FC<TabPanelProps> = ({
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ py: 2 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {value === index && <Box sx={{ py: 2 }}>{children}</Box>}
     </div>
   );
 };
@@ -55,7 +51,7 @@ const PropertiesTabs: React.FC = () => {
           aria-label='properties tabs'
         >
           <Tab label='Scraping' {...a11yProps(0)} />
-          <Tab label='Search' {...a11yProps(1)} />
+          <Tab label='Filter' {...a11yProps(1)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
